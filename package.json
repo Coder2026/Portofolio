@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "npx tailwindcss -i ./src/index.css -o ./public/css/style.css --watch",
-    "build": "npx tailwindcss -i ./src/index.css -o ./public/css/style.css"
+    "build": "npx tailwindcss -i ./src/index.css -o ./public/css/style.css --minify"
   },
+  
   "dependencies": {
     "normalize.css": "^8.0.1"
   },
