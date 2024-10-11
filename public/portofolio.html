@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom carousel button styles */
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1D4ED8;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-btn {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* Custom image shadow */
+        .carousel-item img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            object-fit: contain;
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            background-color: white;
+        }
+
+        .carousel-item img:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hidden slide */
+        .hidden-slide {
+            display: none;
+        }
+
+        /* Background carousel container */
+        .carousel-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-transparent left-0 right-0 w-full absolute top-0 flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-6">
+                    <a href="home.html" class="text-lg font-bold text-blue-600 block py-6">AdnanMursyid</a>
+                </div>
+                <div class="px-6 flex items-center">
+                    <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden">
+                        <span class="hamburger-line transition duration-300 origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300"></span>
+                        <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a href="index.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Home</a>
+                            </li>  
+                            <li class="group">
+                                <a href="portofolio.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="experiences.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Experiences</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> 
+            </div>
+        </div>
+    </header>
+
+  <!-- Project 1 Section -->
+<div class="min-h-screen flex flex-col justify-center items-center py-5 px-6"> <!-- Added px-6 here -->
+    <h2 class="text-2xl font-semibold text-center mb-8">Healthy</h2>
+
+    <!-- Added padding horizontal (px-6) -->
+    <p class="text-justify max-w-[1200px] mx-auto text-gray-600 mb-12 px-6">
+        As part of the Human-Computer Interaction (HCI) course, I designed the user interface (UI) for the <strong>Healthy</strong> app, focusing on creating an intuitive user experience. This mobile application concept is aimed at promoting a healthy lifestyle by monitoring physical activities through smartwatch integration. It also offers personalized recommendations for nutritious food and helps users locate gyms and workout routines that suit their needs. Additionally, users can explore a wide range of health-related articles.
+        <br><br>
+        I designed three key sections of the app:
+        <br><br>
+        - <strong>Login, Shop, and Schedule</strong>: Each section was designed with user-friendly interfaces and seamless navigation to ensure smooth user experiences. My focus was on crafting a straightforward yet effective UI to enhance usability.
+        <br><br>
+        You can view the complete design project on <a href="https://www.figma.com/proto/SMWBTlDXNI1buPMqCSflWQ/HCI---Healthy?node-id=0-1&t=wOz5aprz1UCinsst-1" target="_blank" class="text-blue-600 underline mb-4">figma</a>
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
+        <!-- Carousel 1: Login UI -->
+        <div id="carousel-login" class="relative flex flex-col items-center overflow-hidden">
+            <h3 class="text-xl font-semibold text-center mb-4">Login & Register UI</h3>
+            <div class="carousel-container relative flex transition-transform duration-500">
+                <!-- Slide 1 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/figma/5_Onboarding 3.jpg" alt="Login Slide 1" class="rounded-lg shadow-md">
+                </div>
+                <!-- slide2 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/figma/12_Sign Up - Correct Password.jpg" alt="Login Slide 1" class="rounded-lg shadow-md">
+                </div>
+                <!-- slide3 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/figma/13_Sign Up - Success.jpg" alt="Login Slide 1" class="rounded-lg shadow-md">
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/8_Login - Correct Password.jpg" alt="Login Slide 2" class="rounded-lg shadow-md">
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/9_Login - Success.jpg" alt="Login Slide 3" class="rounded-lg shadow-md">
+                </div>
+            </div>
+            <button id="prev-login" class="carousel-btn prev-btn">&#10094;</button>
+            <button id="next-login" class="carousel-btn next-btn">&#10095;</button>
+        </div>
+
+        <!-- Carousel 2: Shop UI -->
+        <div id="carousel-shop" class="relative flex flex-col items-center overflow-hidden">
+            <h3 class="text-xl font-semibold text-center mb-4">Shop UI</h3>
+            <div class="carousel-container relative flex transition-transform duration-500">
+                <!-- Slide 1 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/figma/31_Food.jpg" alt="Shop Slide 1" class="rounded-lg shadow-md">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/32Food Detail.jpg" alt="Shop Slide 2" class="rounded-lg shadow-md">
+                </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                        <img src="image/figma/32Food Detail-3.jpg" alt="Shop Slide 2" class="rounded-lg shadow-md">
+                    </div>
+
+                   <!-- Slide 4 -->
+                   <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/33_My Cart.jpg" alt="Shop Slide 2" class="rounded-lg shadow-md">
+                </div>
+
+                       <!-- Slide 5 -->
+                       <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                        <img src="image/figma/33_My Cart-1.jpg" alt="Shop Slide 2" class="rounded-lg shadow-md">
+                    </div>
+
+            </div>
+            <button id="prev-shop" class="carousel-btn prev-btn">&#10094;</button>
+            <button id="next-shop" class="carousel-btn next-btn">&#10095;</button>
+        </div>
+
+        <!-- Carousel 3: Calendar UI -->
+        <div id="carousel-calendar" class="relative flex flex-col items-center overflow-hidden">
+            <h3 class="text-xl font-semibold text-center mb-4">Calendar UI</h3>
+            <div class="carousel-container relative flex transition-transform duration-500">
+                <!-- Slide 1 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/figma/28_Schedule.jpg" alt="Calendar Slide 1" class="rounded-lg shadow-md">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/28_Schedule2.jpg" alt="Calendar Slide 2" class="rounded-lg shadow-md">
+                </div>
+
+                 <!-- Slide 3 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/figma/28_Schedule3.jpg" alt="Calendar Slide 2" class="rounded-lg shadow-md">
+                </div>
+            </div>
+            <button id="prev-calendar" class="carousel-btn prev-btn">&#10094;</button>
+            <button id="next-calendar" class="carousel-btn next-btn">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Project 2 Section (Product Management App) -->
+<div id="product-section" class="min-h-screen flex flex-col justify-center items-center py-5 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full max-w-7xl px-6">
+        <!-- Text on the left (for large screens) -->
+        <div class="project-text text-gray-800 lg:order-1 order-2">
+            <h3 class="text-2xl font-semibold text-center mb-8">E-Ramen</h3>
+            <p class="text-justify  max-w-[1200px] mx-auto text-gray-600 mb-12 lg:text-lg lg:px-8">
+                I developed the <strong>E-Ramen</strong> project as part of the Human-Computer Interaction (HCI) Lab. E-Ramen is a web-based platform that showcases various ramen products, special promotions, and includes sections for the shop’s history and a contact form.
+                <br><br>
+                Built using HTML, CSS, and JavaScript, the project offers an interactive and user-friendly interface. Currently, the design is tailored for a screen size of <strong>1280x2100</strong> and is not yet responsive across other screen sizes.
+
+                <br><br>
+                View Source on <a href="https://github.com/Coder2026/E-Ramen" target="_blank" class="text-blue-600 underline mb-4">Github</a>
+            </p>
+            
+        </div>
+
+        <!-- Carousel on the right (for large screens) -->
+        <div id="carousel-product" class="relative flex flex-col items-center overflow-hidden lg:order-2 order-1">
+            <div class="carousel-container relative flex transition-transform duration-500">
+                <!-- Slide 1 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%]">
+                    <img src="image/E-Ramen/home.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/E-Ramen/best-ramen.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+
+                  <!-- Slide 3 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/E-Ramen/our-ramen.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+
+                  <!-- Slide 4 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/E-Ramen/our-product.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+
+                  <!-- Slide 5 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/E-Ramen/promo.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+
+                  <!-- Slide 6 -->
+                <div class="carousel-item min-w-[100%] lg:min-w-[100%] hidden-slide">
+                    <img src="image/E-Ramen/history.png" alt="Product Management App" class="rounded-lg shadow-md">
+                </div>
+            </div>
+
+            <!-- Prev and Next Buttons -->
+            <button id="prev-product" class="carousel-btn prev-btn">&#10094;</button>
+            <button id="next-product" class="carousel-btn next-btn">&#10095;</button>
+        </div>
+    </div>
+</div>
+    
+
+    <!-- Project 3 Section (Ontime Mobile App) -->
+    <div id="project-section-3" class="min-h-screen flex flex-col justify-center items-center py-5 lg:py-16">
+        <div class="w-full max-w-7xl px-6">
+            <!-- Title centered -->
+            <h3 class="text-2xl font-semibold text-center mb-8">On Time</h3>
+
+            <!-- Flexbox for left (description) and right (carousel) layout -->
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
+                <!-- Text description on the left -->
+                <div class="project-text text-gray-800 w-full lg:w-2/5 lg:pl-8">
+                    <p class="text-justify text-gray-600 mb-12">
+                        As part of my <strong>Software Engineering</strong> class, I developed the <strong>Ontime</strong> mobile application, taking on multiple roles as Frontend Developer, Backend Developer, and Scrum Master. Ontime is a task management app designed to help users effectively manage their tasks and schedules.
+                        <br><br>
+                        Key responsibilities:
+                        <br><br>
+                        - <strong>Login, Register, and Reset Password</strong>: I developed both the UI (using XML for layout) and the backend logic (using Java) to handle user authentication and password recovery.
+                        <br>
+                        - <strong>Todo and Schedule Management</strong>: I implemented a <strong>Todo</strong> feature allowing users to manage tasks, and I also designed the <strong>Schedule</strong> feature for organizing daily or weekly plans.
+                        <br><br>
+                        This project demonstrates my ability to manage both frontend and backend development, while also applying agile principles in my role as Scrum Master.
+                        <br><br>
+                View Source on <a href="https://gitfront.io/r/Adnan/qzDKDtB2dWiy/ONTIME/" target="_blank" class="text-blue-600 underline mb-4">Gitfront</a>
+                    </p>
+                </div>
+
+                <!-- Carousel on the right -->
+                <div id="carousel-project-3" class="relative flex flex-col items-center w-full lg:w-3/5">
+                    <div class="carousel-container relative flex transition-transform duration-500">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item min-w-[100%]">
+                            <img src="image/ontime_picture/login.png" alt="Project 3 Slide 1" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/register.png" alt="Project 3 Slide 2" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/reset.png" alt="Project 3 Slide 3" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/add.png" alt="Project 3 Slide 4" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/todo.png" alt="Project 3 Slide 5" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/add_schedule.png" alt="Project 3 Slide 6" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/schedule.png" alt="Project 3 Slide 7" class="rounded-lg shadow-md">
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="carousel-item min-w-[100%] hidden-slide">
+                            <img src="image/ontime_picture/profile.png" alt="Project 3 Slide 8" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+
+                    <!-- Prev and Next Buttons -->
+                    <button id="prev-project-3" class="carousel-btn prev-btn">&#10094;</button>
+                    <button id="next-project-3" class="carousel-btn next-btn">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 4 Section (Coocokien) -->
+    <div id="project-section-4" class="min-h-screen flex flex-col justify-center items-center py-5 lg:py-16">
+        <div class="w-full max-w-7xl px-6">
+            <!-- Title centered -->
+            <h3 class="text-2xl font-semibold text-center mb-8">Cocokien</h3>
+
+            <!-- Flexbox for left (description) and right (image) layout -->
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
+                <!-- Text description on the left -->
+                <div class="project-text text-gray-800 w-full lg:w-2/5 lg:pl-8">
+                    <p class="text-justify text-gray-600 mb-12">
+                        As part of my <strong>Entrepreneur Course</strong>, I developed the backend for <strong>Coocokien</strong>, a website designed to market products with an innovative code redemption system. The highlight of the project is a gacha mechanism where users redeem codes to receive virtual stickers, which can later be used for promotional purposes or exchanged for rewards.
+                        <br><br>
+                        Key technologies and features:
+                        <br><br>
+                        - <strong>Code Redemption & Gacha System</strong>: I developed the backend to manage code redemptions and integrated the gacha system to distribute stickers randomly.
+                        <br>
+                        - <strong>OCR Integration</strong>: I implemented <strong>Optical Character Recognition (OCR)</strong> to scan and automatically read codes from images, simplifying user interactions.
+                        <br>
+                        - <strong>Backend Development</strong>: Using Flask and Python, I built a robust backend that handles code processing, gacha logic, and system integration.
+                        <br><br>
+                View Source on <a href="https://github.com/Coder2026/ReedemCode" target="_blank" class="text-blue-600 underline mb-4">Github</a>
+                    </p>
+                </div>
+
+                <!-- Image on the right -->
+                <div class="relative flex flex-col items-center w-full lg:w-3/5">
+                    <div class="carousel-container relative flex transition-transform duration-500">
+                        <div class="carousel-item min-w-[100%]">
+                            <img src="image/postman.png" alt="Project 4 Design" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 py-8">
+        <div class="container mx-auto px-6 text-center text-white">
+            <!-- Social Media Links -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">Connect with me</h2>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                        <img src="./image/linkedin.png" alt="LinkedIn" class="w-8 h-8">
+                    </a>
+                    <a href="https://github.com/Coder2026" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                        <img src="./image/github.png" alt="GitHub" class="w-8 h-8">
+                    </a>
+                    <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                        <img src="./image/ig.png" alt="Instagram" class="w-8 h-8">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Contact Me</h2>
+                <p>Email: <a href="mailto:adnanmursyid@gmail.com" class="underline hover:text-gray-200">adnanmursyid@gmail.com</a></p>
+                <p>Phone: <a href="tel:+6282217135529" class="underline hover:text-gray-200">+6282217135529</a></p>
+            </div>
+
+            <!-- Footer Credits -->
+            <div class="text-sm text-gray-300">
+                <p>&copy; 2024 Adnan Mursyid. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>

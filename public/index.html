@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-transparent left-0 right-0 w-full absolute top-0 flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <!-- logo -->
+                <div class="px-6">
+                    <a href="#Home" class="text-lg font-bold text-blue-600 block py-6">AdnanMursyid</a>
+                </div>
+
+                
+                <div class="px-6 flex items-center">
+                   <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden">
+                    <span class="hamburger-line transition duration-300 origin-top-left"></span>
+                    <span class="hamburger-line transition duration-300"></span>
+                    <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
+                   </button>
+
+                   <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <ul class="block lg:flex">
+                        <li class="group">
+                            <a href="index.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Home</a>
+                        </li>  
+                        <li class="group">
+                            <a href="portofolio.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Portofolio</a>
+                        </li>
+                        <li class="group">
+                            <a href="experiences.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Experiences</a>
+                        </li>
+                    </ul>
+                   </nav>
+
+                </div> 
+            </div>
+        </div>
+    </header>
+
+    <section id="Home" class="min-h-screen pt-36 flex items-center justify-center relative overflow-hidden">
+    <div class="container mx-auto text-center">
+        <div class="relative inline-block">
+            <!-- Main Background Circle -->
+            <div class="absolute top-1/2 left-1/2 w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0 shadow-xl hover:shadow-2xl transition duration-500 ease-in-out"></div>
+
+            <!-- Floating small circles -->
+            <div class="absolute top-4 left-0 w-12 h-12 bg-black rounded-full opacity-20 transform translate-x-4 -translate-y-4 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
+            <div class="absolute right-0 w-16 h-16 bg-yellow-500 rounded-full opacity-50 transform -translate-x-6 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
+            <div class="absolute top-1/4 right-0 w-10 h-10 bg-white rounded-full opacity-40 transform -translate-x-2 translate-y-2 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
+
+            <!-- Profile Image -->
+            <img src="./image/noBg_porto.png" alt="Profile_image" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl z-10 transition transform hover:scale-110 hover:rotate-3 duration-500 ease-in-out">
+        </div>
+
+        <!-- Name and Tagline -->
+        <h2 class="text-3xl font-bold mt-6 text-blue-600 animate-fadeIn">Adnan Mursyid</h2>
+
+        <p class="mt-2 text-xl font-semibold text-gray-600 italic leading-relaxed">
+            Building the foundations that keep ideas running smoothly.
+        </p>
+        
+        <!-- Introduction -->
+        <p class="mt-4 text-lg text-gray-700 leading-loose font-light hover:text-gray-900 transition duration-300 ease-in-out max-w-[1200px] mx-auto" >
+            🌟 Hi there, I'm Adnan! A tech enthusiast on a mission to create innovative solutions that not only enhance digital experiences but also make a real impact. Let's explore the exciting world of technology together and build something amazing! 🚀
+        </p>
+
+        <!-- Key Skills Section -->
+
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Problem Solving</span>
+            <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Critical Thinking</span>
+            <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Team Collaboration</span>
+            <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Adaptability</span>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="mt-8">
+            <a href="#Contact" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-600 transform hover:scale-105 transition duration-300">
+                Contact Me
+            </a>
+        </div>
+    </div>
+
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden z-0">
+        <div class="absolute w-40 h-40 bg-purple-200 rounded-full opacity-50 top-1/3 left-10 animate-pulse"></div>
+        <div class="absolute w-32 h-32 bg-pink-200 rounded-full opacity-50 top-1/4 right-20 animate-pulse"></div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="About" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold mb-4 text-blue-600">About Me</h1>
+                <h4 class="text-lg text-gray-600 max-w-[1200px] mx-auto font-roboto">
+                    I’m currently a Computer Science student at BINUS University, specializing in Software Engineering. While my main focus is on backend development, I’m also exploring Mobile Programming through a free elective course to broaden my skill set. I’m really passionate about the details of software development, especially when it comes to building strong business logic for the backend. I genuinely enjoy tackling complex problems and designing systems that are not only efficient but also scalable, ensuring everything works smoothly behind the scenes.
+                </h4>
+            </div>
+        </div>
+    </section>
+
+   <!-- Education Section -->
+   <section id="Education" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6">Education</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Education Cards -->
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">SDN 010 Bukit Kauman</h3>
+                <p class="text-gray-500 italic">Graduated: 2016</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">MTSM Lubuk Jambi</h3>
+                <p class="text-gray-500 italic">Graduated: 2019</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">SMAN Pintar Provinsi Riau</h3>
+                <p class="text-gray-500 italic">Graduated: 2022</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">BINUS University</h3>
+                <p class="text-gray-500 italic">Major: Computer Science</p>
+                <p class="text-gray-500 italic">Expected Graduation: 2026</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="Skills" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Skill Cards -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+                <ul class="text-gray-600 grid grid-cols-2 gap-4">
+                    <li class="flex items-center">
+                        <img src="./image/python_logo.png" alt="Python Logo" class="w-6 h-6 mr-2">Python
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/html_logo.png" alt="HTML Logo" class="w-6 h-6 mr-2">HTML
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/css_logo.png" alt="CSS Logo" class="w-7 h-7 mr-2">CSS
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/js_logo.png" alt="JavaScript Logo" class="w-6 h-6 mr-2">JavaScript
+                    </li>
+                    <li class="flex items-center ml-[-10px] mt-[-10px]">
+                        <img src="./image/java_logo.png" alt="Java Logo" class="w-11 h-11 ">Java
+                    </li>
+                    <li class="flex items-center mt-[-10px]">
+                        <img src="./image/c_logo.png" alt="C/C++ Logo" class="w-7 h-7 mr-2">C/C++
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/csharp_logo.png" alt="C# Logo" class="w-7 h-7 mr-2">C#
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Frameworks & Libraries</h3>
+                <ul class="text-gray-600 grid grid-cols-2 gap-4">
+                    <li class="flex items-center">
+                        <img src="./image/flask_logo.png" alt="Flask Logo" class="w-6 h-6 mr-2">Flask
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/asp_logo.png" alt=".NET Logo" class="w-10 h-14 ">.NET
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/tailwind_logo.png" alt="Tailwind Logo" class="w-6 h-6 mr-2">Tailwind
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Tools & Databases</h3>
+                <ul class="text-gray-600 grid grid-cols-2 gap-4">
+                    <li class="flex items-center">
+                        <img src="./image/git_logo.png" alt="Git & GitHub Logo" class="w-6 h-6 mr-2">Git & GitHub
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/mysql_logo.png" alt="MySQL Logo" class="w-7 h-7 mr-2">MySQL
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/cisco_logo.png" alt="Cisco Logo" class="w-7 h-7 mr-2">Cisco
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/android_logo.png" alt="Android Studio Logo" class="w-7 h-7 mr-2">Android Studio
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/adobe_logo.png" alt="Adobe Photoshop Logo" class="w-6 h-6 mr-2">Adobe Photoshop
+                    </li>
+                    <li class="flex items-center">
+                        <img src="./image/figma_logo.png" alt="Figma Logo" class="w-6 h-6 mr-2">Figma
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-blue-600 py-8">
+    <div class="container mx-auto px-6 text-center text-white">
+        <!-- Social Media Links -->
+
+        <!-- Social Media Links -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Connect with me</h2>
+            <div class="flex justify-center space-x-6">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                    <img src="./image/linkedin.png" alt="LinkedIn" class="w-8 h-8">
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/Coder2026" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                    <img src="./image/github.png" alt="GitHub" class="w-8 h-8">
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
+                    <img src="./image/ig.png" alt="Instagram" class="w-8 h-8">
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-2">Contact Me</h2>
+            <p>Email: <a href="mailto:adnanmursyid@gmail.com" class="underline hover:text-gray-200">adnanmursyid@gmail.com</a></p>
+            <p>Phone: <a href="tel:+6282217135529" class="underline hover:text-gray-200">+6282217135529</a></p>
+        </div>
+
+        <!-- Footer Credits -->
+        <div class="text-sm text-gray-300">
+            <p>&copy; 2024 Adnan Mursyid. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

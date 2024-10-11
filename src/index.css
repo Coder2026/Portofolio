@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger-line{
+    @apply w-[30px] h-[2px] my-2 block bg-black;
+}
+
+.hamburger-activate>span:nth-child(1){
+    @apply rotate-45 ;
+}
+
+.hamburger-activate>span:nth-child(2){
+    @apply scale-0;
+}
+
+
+.hamburger-activate>span:nth-child(3){
+    @apply -rotate-45 ;
+}
+
+.fixed-nav{
+    @apply fixed z-[9999] backdrop-blur-md border-b border-black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+.animate-move {
+    animation: moveUpDown 4s ease-in-out infinite;
+}
+
+ /* Menyembunyikan slide yang tidak aktif */
+ .hidden-slide {
+    @apply hidden;
+}
+
+/* Posisi tombol Next dan Prev di atas gambar */
+.carousel-btn {
+    @apply absolute inset-y-0 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700;
+    z-index: 10; /* Agar tombol berada di atas gambar */
+    top: 50%; /* Menempatkan tombol di tengah vertikal */
+    transform: translateY(-50%); /* Koreksi untuk menempatkan tepat di tengah */
+}
+
+/* Next button on the right */
+.next-btn {
+    @apply right-4; /* Tombol di sebelah kanan */
+}
+
+/* Previous button on the left */
+.prev-btn {
+    @apply left-4; /* Tombol di sebelah kiri */
+}
