@@ -1,36 +1,71 @@
 const hamburger = document.querySelector('#hamburger')
 const navMenu = document.querySelector('#nav-menu')
 
-window.onscroll = function(){
+const setHeaderState = () => {
     const header = document.querySelector('header');
-    const offset = header.offsetTop;
+    if (!header) return;
 
-    if(window.scrollY > offset){
+    if (window.scrollY > 20) {
         header.classList.add('fixed-nav');
     } else {
         header.classList.remove('fixed-nav');
     }
+};
+
+window.addEventListener('scroll', setHeaderState, { passive: true });
+setHeaderState();
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('hamburger-activate');
+        navMenu.classList.toggle('hidden');
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                navMenu.classList.add('hidden');
+                hamburger.classList.remove('hamburger-activate');
+            }
+        });
+    });
 }
 
-hamburger.addEventListener('click', function(){
-    hamburger.classList.toggle('hamburger-activate');
-    navMenu.classList.toggle('hidden');
+const revealTargets = Array.from(document.querySelectorAll('.hero-grid > *, .hero-card, .panel, .project-card, .info-card, .about-card, .card, .stat-card, .social-link, .btn, .highlight-card'));
+revealTargets.forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
 });
 
-// Define carousels array including Project 2 carousel
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.18 });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+} else {
+    revealTargets.forEach((element) => element.classList.add('is-visible'));
+}
+
 const carousels = [
-    { id: 'carousel-login', nextBtn: 'next-login', prevBtn: 'prev-login', interval: 3000, index: 0, length: 5 },
-    { id: 'carousel-shop', nextBtn: 'next-shop', prevBtn: 'prev-shop', interval: 3000, index: 0, length: 5 },
-    { id: 'carousel-calendar', nextBtn: 'next-calendar', prevBtn: 'prev-calendar', interval: 3000, index: 0, length: 3 },
-    { id: 'carousel-product', nextBtn: 'next-product', prevBtn: 'prev-product', interval: 3000, index: 0, length: 6 },
-    { id: 'carousel-project-3', nextBtn: 'next-project-3', prevBtn: 'prev-project-3', interval: 3000, index: 0, length: 8 }
+    { id: 'carousel-healthy', nextBtn: 'next-healthy', prevBtn: 'prev-healthy', interval: 3500, index: 0, length: 4 },
+    { id: 'carousel-eramen', nextBtn: 'next-eramen', prevBtn: 'prev-eramen', interval: 3500, index: 0, length: 4 },
+    { id: 'carousel-ontime', nextBtn: 'next-ontime', prevBtn: 'prev-ontime', interval: 3500, index: 0, length: 4 },
+    { id: 'carousel-cocokien', nextBtn: 'next-cocokien', prevBtn: 'prev-cocokien', interval: 3500, index: 0, length: 1 }
 ];
 
 carousels.forEach((carousel) => {
     const carouselEl = document.getElementById(carousel.id);
+    if (!carouselEl) return;
+
     const slides = carouselEl.querySelectorAll('.carousel-item');
-    const nextBtn = document.getElementById(carousel.nextBtn); // Tombol next sesuai carousel
-    const prevBtn = document.getElementById(carousel.prevBtn); // Tombol prev sesuai carousel
+    const nextBtn = document.getElementById(carousel.nextBtn);
+    const prevBtn = document.getElementById(carousel.prevBtn);
 
     const showSlide = (index) => {
         slides.forEach((slide, i) => {
@@ -52,12 +87,9 @@ carousels.forEach((carousel) => {
         showSlide(carousel.index);
     };
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
 
-    // Start auto slide
     setInterval(nextSlide, carousel.interval);
-
-    // Show the first slide
     showSlide(carousel.index);
 });

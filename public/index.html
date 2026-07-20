@@ -3,251 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
+    <title>Adnan Mursyid | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --accent: #60a5fa;
+            --accent-strong: #2563eb;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --panel: rgba(255,255,255,0.08);
+            --panel-strong: rgba(255,255,255,0.12);
+            --border: rgba(255,255,255,0.14);
+            --bg: #07111f;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top left, #17325e 0%, var(--bg) 50%, #0b1220 100%);
+            line-height: 1.7;
+        }
+        a { color: inherit; text-decoration: none; }
+        header {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 50;
+            padding: 1rem 1.25rem;
+            transition: all 0.25s ease;
+        }
+        .fixed-nav {
+            background: rgba(7,17,31,0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .nav-link { color: #cbd5e1; transition: color 0.2s ease; }
+        .nav-link:hover { color: white; }
+        .hero { min-height: 100vh; padding: 7rem 1.25rem 3rem; display: flex; align-items: center; }
+        .hero-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.35rem; align-items: center; }
+        .eyebrow { display: inline-flex; padding: 0.45rem 0.8rem; border-radius: 999px; background: rgba(96,165,250,0.16); color: #bfdbfe; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+        h1 { font-size: clamp(2.15rem, 4vw, 3.35rem); line-height: 1.08; margin: 1rem 0 0.7rem; font-weight: 800; }
+        .lead { font-size: 1.02rem; color: var(--muted); margin: 0; max-width: 650px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.82rem 1.1rem; border-radius: 999px; font-weight: 600; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-strong)); color: white; box-shadow: 0 14px 30px rgba(37,99,235,0.25); }
+        .btn-secondary { background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: #f8fafc; }
+        .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 24px; padding: 1.2rem; box-shadow: 0 22px 50px rgba(0,0,0,0.18); }
+        .panel-title { font-size: 1.02rem; font-weight: 700; margin: 0 0 0.45rem; }
+        .panel p { color: var(--muted); margin: 0; }
+        .stats-grid { display: grid; gap: 0.75rem; margin-top: 1rem; }
+        .stat-card { padding: 0.85rem 0.95rem; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+        .stat-card strong { display: block; color: white; margin-bottom: 0.2rem; }
+        .section { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 2.25rem; position: relative; }
+        .section::before { content: ""; position: absolute; inset: -0.4rem 1.25rem auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.35), transparent); }
+        .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 0.7rem; margin-bottom: 0.9rem; }
+        .section-title { font-size: 1.35rem; font-weight: 700; margin: 0; }
+        .section-copy { color: var(--muted); margin: 0; }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+        .highlight-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 1.2rem; }
+        .highlight-card { padding: 1rem 1.05rem; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+        .highlight-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+        .highlight-card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+        .info-card { padding: 1rem; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); }
+        .info-card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+        .info-card p { color: var(--muted); margin: 0; }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.85rem; }
+        .pill { display: inline-flex; padding: 0.4rem 0.7rem; border-radius: 999px; background: rgba(96,165,250,0.16); color: #bfdbfe; font-size: 0.8rem; font-weight: 600; }
+        .list { color: var(--muted); padding-left: 1rem; margin: 0.6rem 0 0; }
+        .list li { margin-bottom: 0.35rem; }
+        footer { max-width: 1200px; margin: 0 auto; padding: 1rem 1.25rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.12); }
+        .social-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .social-link { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.14); }
+        .social-link img { width: 20px; height: 20px; }
+        @media (max-width: 900px) { .hero-grid, .grid-2, .grid-3, .highlight-strip { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .hero { padding-top: 6rem; } }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
-
-    <!-- Header -->
-    <header class="bg-transparent left-0 right-0 w-full absolute top-0 flex items-center z-10">
-        <div class="container">
+<body>
+    <header>
+        <div class="container" style="position: relative;">
             <div class="flex items-center justify-between relative">
-                <!-- logo -->
                 <div class="px-6">
-                    <a href="#Home" class="text-lg font-bold text-blue-600 block py-6">AdnanMursyid</a>
+                    <a href="#Home" class="text-lg font-bold block py-4" style="color: #f8fafc;">AdnanMursyid</a>
                 </div>
-
-                
                 <div class="px-6 flex items-center">
-                   <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden">
-                    <span class="hamburger-line transition duration-300 origin-top-left"></span>
-                    <span class="hamburger-line transition duration-300"></span>
-                    <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
-                   </button>
-
-                   <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
-                    <ul class="block lg:flex">
-                        <li class="group">
-                            <a href="index.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Home</a>
-                        </li>  
-                        <li class="group">
-                            <a href="portofolio.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Portofolio</a>
-                        </li>
-                        <li class="group">
-                            <a href="experiences.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Experiences</a>
-                        </li>
-                    </ul>
-                   </nav>
-
-                </div> 
+                    <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden" aria-label="Open menu">
+                        <span class="hamburger-line transition duration-300 origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300"></span>
+                        <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="block lg:flex">
+                            <li><a href="index.html" class="nav-link text-base py-2 mx-8 flex">Home</a></li>
+                            <li><a href="portofolio.html" class="nav-link text-base py-2 mx-8 flex">Portofolio</a></li>
+                            <li><a href="experiences.html" class="nav-link text-base py-2 mx-8 flex">Experiences</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="Home" class="min-h-screen pt-36 flex items-center justify-center relative overflow-hidden">
-        <div class="container mx-auto text-center">
-            <div class="relative inline-block">
-                <!-- Main Background Circle -->
-                <div class="absolute top-1/2 left-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0 shadow-xl hover:shadow-2xl transition duration-500 ease-in-out"></div>
-    
-                <!-- Floating small circles -->
-                <div class="absolute top-4 left-0 w-12 h-12 bg-black rounded-full opacity-20 transform translate-x-4 -translate-y-4 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
-                <div class="absolute right-0 w-16 h-16 bg-yellow-500 rounded-full opacity-50 transform -translate-x-6 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
-                <div class="absolute top-1/4 right-0 w-10 h-10 bg-white rounded-full opacity-40 transform -translate-x-2 translate-y-2 z-0 transition-all duration-500 ease-in-out hover:scale-125 hover:opacity-80 animate-move"></div>
-    
-                <!-- Profile Image -->
-                <img src="./image/noBg_porto.png" alt="Profile_image" class="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-2xl z-10 transition transform hover:scale-110 hover:rotate-3 duration-500 ease-in-out">
+    <main id="Home">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <span class="eyebrow">Software Engineering • Backend • Web</span>
+                    <h1>Building dependable software with a backend-focused approach.</h1>
+                    <p class="lead">I’m Adnan Mursyid, a software engineering graduate with experience in backend development, RESTful APIs, and practical product delivery. My background spans enterprise application development, backend systems, and real-world problem solving.</p>
+                    <div class="hero-actions">
+                        <a href="portofolio.html" class="btn btn-primary">See my portfolio</a>
+                        <a href="mailto:adnanmursyid@gmail.com" class="btn btn-secondary">Let’s connect</a>
+                    </div>
+                </div>
+                <div class="panel">
+                    <p class="panel-title">Current focus</p>
+                    <p>I’m interested in building reliable backend systems, APIs, and web solutions that support real-world product needs, with a strong focus on scalability, clean architecture, and maintainability.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card"><strong>Enterprise experience</strong><span>Built and enhanced internal applications during an internship at BCA.</span></div>
+                        <div class="stat-card"><strong>Backend-focused</strong><span>Experienced in Java, Spring Boot, PostgreSQL, REST APIs, and authentication flows.</span></div>
+                        <div class="stat-card"><strong>Collaborative</strong><span>Comfortable working in agile environments with business, QA, and development teams.</span></div>
+                    </div>
+                </div>
             </div>
-    
-            <!-- Name and Tagline -->
-            <h2 class="text-3xl font-bold mt-6 text-blue-600 animate-fadeIn">Adnan Mursyid</h2>
-    
-            <p class="mt-2 text-xl font-semibold text-gray-600 italic leading-relaxed">
-                Building the foundations that keep ideas running smoothly.
-            </p>
-            
-            <!-- Introduction -->
-            <p class="mt-4 text-lg text-gray-700 leading-loose font-light hover:text-gray-900 transition duration-300 ease-in-out max-w-[1200px] mx-auto" >
-                🌟 Hi there, I'm Adnan! A tech enthusiast on a mission to create innovative solutions that not only enhance digital experiences but also make a real impact. Let's explore the exciting world of technology together and build something amazing! 🚀
-            </p>
-    
-            <!-- Key Skills Section -->
-            <div class="mt-6 flex flex-wrap justify-center gap-4">
-                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Problem Solving</span>
-                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Critical Thinking</span>
-                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Team Collaboration</span>
-                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Adaptability</span>
-            </div>
-    
-            <!-- Contact Button -->
-            <div class="mt-10 mb-16">
-                <a href="https://wa.me/6282217135529" target="_blank" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-blue-600 transform hover:scale-105 transition duration-300 relative z-10">
-                    Contact Me
-                </a>
-            </div>
-        </div>
-    
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 overflow-hidden z-0">
-            <div class="absolute w-40 h-40 bg-purple-200 rounded-full opacity-50 top-1/3 left-10 animate-pulse hidden sm:block"></div>
-            <div class="absolute w-32 h-32 bg-pink-200 rounded-full opacity-50 top-1/4 right-20 animate-pulse hidden sm:block"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="About" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <h1 class="text-3xl font-bold mb-4 text-blue-600">About Me</h1>
-                <h4 class="text-lg text-gray-600 max-w-[1200px] mx-auto font-roboto">
-                    I’m currently a Computer Science student at BINUS University, specializing in Software Engineering. While my main focus is on backend development, I’m also exploring Mobile Programming through a free elective course to broaden my skill set. I’m really passionate about the details of software development, especially when it comes to building strong business logic for the backend. I genuinely enjoy tackling complex problems and designing systems that are not only efficient but also scalable, ensuring everything works smoothly behind the scenes.
-                </h4>
+        <section class="section">
+            <div class="highlight-strip">
+                <div class="highlight-card">
+                    <h3>Reliable systems</h3>
+                    <p>I focus on building solutions that are dependable and easy to maintain.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Structured thinking</h3>
+                    <p>My approach combines technical discipline with clear problem-solving.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Continuous improvement</h3>
+                    <p>I value refining ideas until they become practical, efficient, and useful.</p>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="page-intro">
+                <span class="eyebrow">How I work</span>
+                <h2 class="section-title">I build solutions that balance technical quality with practical value.</h2>
+            </div>
+            <div class="grid-3">
+                <div class="info-card">
+                    <h3>Build with clarity</h3>
+                    <p>I focus on implementing solutions that are understandable, maintainable, and effective.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Structure with purpose</h3>
+                    <p>I try to turn ideas into systems that are scalable and easy to support over time.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Learn quickly</h3>
+                    <p>I enjoy applying new knowledge to solve problems with better and more practical outcomes.</p>
+                </div>
+            </div>
+        </section>
 
-   <!-- Education Section -->
-   <section id="Education" class="py-20 bg-gray-100">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-blue-600 mb-6">Education</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Education Cards -->
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-700">SDN 010 Bukit Kauman</h3>
-                <p class="text-gray-500 italic">Graduated: 2016</p>
+        <section class="section">
+            <div class="section-heading">
+                <h2 class="section-title">About me</h2>
             </div>
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-700">MTSM Lubuk Jambi</h3>
-                <p class="text-gray-500 italic">Graduated: 2019</p>
+            <div class="panel">
+                <p>I’m a software engineering graduate from BINUS University with a strong interest in backend development, especially in Java, Spring Boot, PostgreSQL, and RESTful API design. I also enjoy working on practical web solutions, enterprise applications, and product-oriented problem solving.</p>
+                <div class="pill-row">
+                    <span class="pill">Problem solving</span>
+                    <span class="pill">Critical thinking</span>
+                    <span class="pill">Team collaboration</span>
+                    <span class="pill">Adaptability</span>
+                    <span class="pill">Clean architecture</span>
+                    <span class="pill">Scalable systems</span>
+                </div>
             </div>
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-700">SMAN Pintar Provinsi Riau</h3>
-                <p class="text-gray-500 italic">Graduated: 2022</p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2 class="section-title">Education</h2>
             </div>
-            <div class="bg-white p-6 shadow-lg rounded-lg">
-                <h3 class="text-xl font-semibold text-gray-700">BINUS University</h3>
-                <p class="text-gray-500 italic">Major: Computer Science</p>
-                <p class="text-gray-500 italic">Expected Graduation: 2026</p>
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>BINUS University</h3>
+                    <p>Computer Science • Software Engineering • Graduated 2026</p>
+                </div>
+                <div class="info-card">
+                    <h3>SMAN Pintar Provinsi Riau</h3>
+                    <p>Graduated 2022</p>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="grid-2">
+
+    <div class="info-card">
+        <h3>Programming Languages</h3>
+        <ul class="list">
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>C#</li>
+            <li>C++</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
     </div>
-</section>
 
-<!-- Skills Section -->
-<section id="Skills" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Skill Cards -->
-            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
-                <ul class="text-gray-600 grid grid-cols-2 gap-4">
-                    <li class="flex items-center">
-                        <img src="./image/python_logo.png" alt="Python Logo" class="w-6 h-6 mr-2">Python
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/html_logo.png" alt="HTML Logo" class="w-6 h-6 mr-2">HTML
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/css_logo.png" alt="CSS Logo" class="w-7 h-7 mr-2">CSS
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/js_logo.png" alt="JavaScript Logo" class="w-6 h-6 mr-2">JavaScript
-                    </li>
-                    <li class="flex items-center ml-[-10px] mt-[-10px]">
-                        <img src="./image/java_logo.png" alt="Java Logo" class="w-11 h-11 ">Java
-                    </li>
-                    <li class="flex items-center mt-[-10px]">
-                        <img src="./image/c_logo.png" alt="C/C++ Logo" class="w-7 h-7 mr-2">C/C++
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/csharp_logo.png" alt="C# Logo" class="w-7 h-7 mr-2">C#
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-4">Frameworks & Libraries</h3>
-                <ul class="text-gray-600 grid grid-cols-2 gap-4">
-                    <li class="flex items-center">
-                        <img src="./image/flask_logo.png" alt="Flask Logo" class="w-6 h-6 mr-2">Flask
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/asp_logo.png" alt=".NET Logo" class="w-10 h-14 ">.NET
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/tailwind_logo.png" alt="Tailwind Logo" class="w-6 h-6 mr-2">Tailwind
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-4">Tools & Databases</h3>
-                <ul class="text-gray-600 grid grid-cols-2 gap-4">
-                    <li class="flex items-center">
-                        <img src="./image/git_logo.png" alt="Git & GitHub Logo" class="w-6 h-6 mr-2">Git & GitHub
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/mysql_logo.png" alt="MySQL Logo" class="w-7 h-7 mr-2">MySQL
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/cisco_logo.png" alt="Cisco Logo" class="w-7 h-7 mr-2">Cisco
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/android_logo.png" alt="Android Studio Logo" class="w-7 h-7 mr-2">Android Studio
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/adobe_logo.png" alt="Adobe Photoshop Logo" class="w-6 h-6 mr-2">Adobe Photoshop
-                    </li>
-                    <li class="flex items-center">
-                        <img src="./image/figma_logo.png" alt="Figma Logo" class="w-6 h-6 mr-2">Figma
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="info-card">
+        <h3>Frameworks & Technologies</h3>
+        <ul class="list">
+            <li>Spring Boot</li>
+            <li>Flask</li>
+            <li>RESTful API</li>
+            <li>JWT Authentication</li>
+            <li>PostGIS</li>
+            <li>ASP.NET</li>
+            <li>Tailwind CSS</li>
+        </ul>
     </div>
-</section>
 
-<!-- Footer Section -->
-<footer class="bg-blue-600 py-8">
-    <div class="container mx-auto px-6 text-center text-white">
-        <!-- Social Media Links -->
-
-        <!-- Social Media Links -->
-        <div class="mb-6">
-            <h2 class="text-xl font-semibold mb-4">Connect with me</h2>
-            <div class="flex justify-center space-x-6">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                    <img src="./image/linkedin.png" alt="LinkedIn" class="w-8 h-8">
-                </a>
-                <!-- GitHub -->
-                <a href="https://github.com/Coder2026" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                    <img src="./image/github.png" alt="GitHub" class="w-8 h-8">
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                    <img src="./image/ig.png" alt="Instagram" class="w-8 h-8">
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="mb-6">
-            <h2 class="text-xl font-semibold mb-2">Contact Me</h2>
-            <p>Email: <a href="mailto:adnanmursyid@gmail.com" class="underline hover:text-gray-200">adnanmursyid@gmail.com</a></p>
-            <p>Phone: <a href="tel:+6282217135529" class="underline hover:text-gray-200">+6282217135529</a></p>
-        </div>
-
-        <!-- Footer Credits -->
-        <div class="text-sm text-gray-300">
-            <p>&copy; 2024 Adnan Mursyid. All rights reserved.</p>
-        </div>
+    <div class="info-card">
+        <h3>Databases & Cloud</h3>
+        <ul class="list">
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Nginx</li>
+        </ul>
     </div>
-</footer>
-        
-        <script>
-            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+
+    <div class="info-card">
+        <h3>Tools</h3>
+        <ul class="list">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Visual Studio Code</li>
+            <li>IntelliJ IDEA</li>
+            <li>Android Studio</li>
+            <li>Figma</li>
+            <li>Adobe Photoshop</li>
+            <li>Cisco Networking Basics</li>
+        </ul>
+    </div>
+
+</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 class="section-title">Let’s work together</h2>
+            <p class="section-copy">Open to collaboration, feedback, and new opportunities.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="social-link" aria-label="LinkedIn"><img src="./image/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Coder2026" target="_blank" class="social-link" aria-label="GitHub"><img src="./image/github.png" alt="GitHub"></a>
+                <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="social-link" aria-label="Instagram"><img src="./image/ig.png" alt="Instagram"></a>
+            </div>
+            <p style="margin-top: 1rem; color: #cbd5e1;">Email: <a href="mailto:adnanmursyid@gmail.com" style="color: #7dd3fc;">adnanmursyid@gmail.com</a></p>
+        </div>
+    </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>

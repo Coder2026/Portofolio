@@ -3,100 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences - Adnan Mursyid</title>
+    <title>Adnan Mursyid | Experiences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --accent: #60a5fa;
+            --accent-strong: #2563eb;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --panel: rgba(255,255,255,0.08);
+            --border: rgba(255,255,255,0.14);
+            --bg: #07111f;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top left, #17325e 0%, var(--bg) 50%, #0b1220 100%);
+            line-height: 1.7;
+        }
+        a { color: inherit; text-decoration: none; }
+        header {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 50;
+            padding: 1rem 1.25rem;
+            transition: all 0.25s ease;
+        }
+        .fixed-nav {
+            background: rgba(7,17,31,0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .nav-link { color: #cbd5e1; transition: color 0.2s ease; }
+        .nav-link:hover { color: white; }
+        .page { min-height: 100vh; padding: 7rem 1.25rem 3rem; }
+        .hero-card { max-width: 1120px; margin: 0 auto; padding: 1.4rem; border-radius: 24px; background: var(--panel); border: 1px solid var(--border); box-shadow: 0 22px 50px rgba(0,0,0,0.18); }
+        .eyebrow { display: inline-flex; padding: 0.45rem 0.8rem; border-radius: 999px; background: rgba(96,165,250,0.16); color: #bfdbfe; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+        h1 { font-size: clamp(2rem, 3.4vw, 2.75rem); margin: 0.8rem 0 0.6rem; font-weight: 800; }
+        .lead { color: var(--muted); margin: 0; max-width: 760px; }
+        .grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 1rem; margin-top: 1rem; }
+        .highlight-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 1.15rem; }
+        .highlight-card { padding: 1rem 1.05rem; border-radius: 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+        .highlight-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+        .highlight-card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+        .card { border-radius: 20px; padding: 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+        .card h3 { margin: 0 0 0.45rem; font-size: 1.06rem; }
+        .card p, .card li { color: var(--muted); }
+        .list { padding-left: 1rem; margin: 0.75rem 0 0; }
+        .thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+        .thumbs img { width: 100%; height: 260px; object-fit: cover; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 12px 24px rgba(0,0,0,0.18); }
+        footer { max-width: 1200px; margin: 0 auto; padding: 1rem 1.25rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.12); }
+        .social-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .social-link { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.14); }
+        .social-link img { width: 20px; height: 20px; }
+        @media (max-width: 900px) { .grid, .highlight-strip { grid-template-columns: 1fr; } .thumbs { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .page { padding-top: 6rem; } }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
-
-    <!-- Header -->
-    <header class="bg-transparent left-0 right-0 w-full absolute top-0 flex items-center z-10">
-        <div class="container">
+<body>
+    <header>
+        <div class="container" style="position: relative;">
             <div class="flex items-center justify-between relative">
-                <!-- logo -->
                 <div class="px-6">
-                    <a href="#Home" class="text-lg font-bold text-blue-600 block py-6">AdnanMursyid</a>
+                    <a href="#Home" class="text-lg font-bold block py-4" style="color: #f8fafc;">AdnanMursyid</a>
                 </div>
-
                 <div class="px-6 flex items-center">
-                   <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden">
-                    <span class="hamburger-line transition duration-300 origin-top-left"></span>
-                    <span class="hamburger-line transition duration-300"></span>
-                    <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
-                   </button>
-
-                   <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
-                    <ul class="block lg:flex">
-                        <li class="group">
-                            <a href="index.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Home</a>
-                        </li>  
-                        <li class="group">
-                            <a href="portofolio.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Portofolio</a>
-                        </li>
-                        <li class="group">
-                            <a href="experiences.html" class="text-base py-2 mx-8 flex group-hover:text-blue-600">Experiences</a>
-                        </li>
-                    </ul>
-                   </nav>
-                </div> 
+                    <button id="hamburger" name="hamburger button" type="button" class="absolute block right-6 lg:hidden" aria-label="Open menu">
+                        <span class="hamburger-line transition duration-300 origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300"></span>
+                        <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
+                    </button>
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="block lg:flex">
+                            <li><a href="index.html" class="nav-link text-base py-2 mx-8 flex">Home</a></li>
+                            <li><a href="portofolio.html" class="nav-link text-base py-2 mx-8 flex">Portofolio</a></li>
+                            <li><a href="experiences.html" class="nav-link text-base py-2 mx-8 flex">Experiences</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
 
-    <div id="scholarship-mentor" class="min-h-screen flex flex-col justify-center items-center py-10 lg:py-16 bg-gray-100">
-        <div class="w-full max-w-5xl px-6 text-center border border-gray-300 rounded-lg bg-white shadow-lg p-8">
-            <!-- Title centered with separator -->
-            <h3 class="text-3xl font-semibold mb-4">Scholarship Mentor</h3>
-            <hr class="border-t border-gray-300 w-1/3 mx-auto mb-6">
-    
-            <!-- Flexbox for text and image layout -->
-            <div class="flex flex-col lg:flex-row justify-between items-start gap-8">
-                
-                <!-- Text description centered with background and padding -->
-                <div class="project-text p-6 rounded-lg max-w-md text-gray-800 lg:w-2/5 bg-gray-50 shadow-sm">
-                    <p class="text-gray-700 leading-relaxed text-left">
-                        I received a scholarship for my role as a <strong>Mentor</strong>, where I teach and guide mentees in understanding the course materials they are currently enrolled in, helping them grasp core concepts and complete academic assignments. My mentoring includes designing tailored teaching sessions to meet each mentee's academic needs, supporting their comprehension of the courses they are taking.
-                    </p>
+    <main id="Home" class="page">
+        <div class="hero-card">
+            <span class="eyebrow">Mentoring • Scholarship • Guidance</span>
+            <h1>Scholarship Mentor</h1>
+            <p class="lead">I received a scholarship for my role as a mentor, where I help mentees understand course material, strengthen their learning process, and complete academic tasks with more confidence.</p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>What this role taught me</h3>
+                    <ul class="list">
+                        <li>How to explain ideas with clarity and patience.</li>
+                        <li>How to adapt teaching approaches to different people.</li>
+                        <li>How to support learning without overcomplicating it.</li>
+                        <li>How to make guidance feel structured and encouraging.</li>
+                    </ul>
                 </div>
-    
-                <!-- Image grid on the right with hover effects -->
-                <div class="grid grid-cols-2 gap-4 lg:w-3/5">
-                    <img src="image/mentoring.jpeg" alt="mentoring 1" class="rounded-lg shadow-md object-cover h-[300px] w-full transform hover:scale-105 transition duration-300">
-                    <img src="image/mentor2.jpeg" alt="mentoring 2" class="rounded-lg shadow-md object-cover h-[300px] w-full transform hover:scale-105 transition duration-300">
+                <div class="thumbs">
+                    <img src="image/mentoring.jpeg" alt="Mentoring session">
+                    <img src="image/mentor2.jpeg" alt="Mentoring session 2">
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 py-8">
-        <div class="container mx-auto px-6 text-center text-white">
-            <!-- Social Media Links -->
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-4">Connect with me</h2>
-                <div class="flex justify-center space-x-6">
-                    <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                        <img src="./image/linkedin.png" alt="LinkedIn" class="w-8 h-8">
-                    </a>
-                    <a href="https://github.com/Coder2026" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                        <img src="./image/github.png" alt="GitHub" class="w-8 h-8">
-                    </a>
-                    <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="hover:opacity-80 bg-white rounded-full p-2 border-2 border-white">
-                        <img src="./image/ig.png" alt="Instagram" class="w-8 h-8">
-                    </a>
+        <section class="section" style="max-width: 1120px; padding: 1.25rem 0 0;">
+            <div class="highlight-strip">
+                <div class="highlight-card">
+                    <h3>Communication</h3>
+                    <p>I learned to explain ideas in a way that feels helpful and grounded.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Consistency</h3>
+                    <p>Mentoring taught me to be calm, dependable, and clear under pressure.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Growth</h3>
+                    <p>It sharpened how I support people while still moving work forward.</p>
                 </div>
             </div>
-
-            <!-- Contact Info -->
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Contact Me</h2>
-                <p>Email: <a href="mailto:adnanmursyid@gmail.com" class="underline hover:text-gray-200">adnanmursyid@gmail.com</a></p>
-                <p>Phone: <a href="tel:+6282217135529" class="underline hover:text-gray-200">+6282217135529</a></p>
+            <div class="page-intro">
+                <span class="eyebrow">What stands out</span>
+                <h2 class="section-title">The experience sharpened both my communication and my sense of responsibility.</h2>
             </div>
-
-            <!-- Footer Credits -->
-            <div class="text-sm text-gray-300">
-                <p>&copy; 2024 Adnan Mursyid. All rights reserved.</p>
+            <div class="grid" style="margin-top: 0.8rem;">
+                <div class="info-card">
+                    <h3>Communication</h3>
+                    <p>I learned how to explain concepts in a way that feels grounded and helpful for different kinds of learners.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Consistency</h3>
+                    <p>Mentoring taught me to stay calm, structured, and dependable when people need guidance.</p>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2 style="font-size: 1.35rem; margin: 0 0 0.4rem;">Let’s connect</h2>
+            <p style="color: #cbd5e1; margin: 0;">Open to collaboration and new opportunities.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="social-link" aria-label="LinkedIn"><img src="./image/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Coder2026" target="_blank" class="social-link" aria-label="GitHub"><img src="./image/github.png" alt="GitHub"></a>
+                <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="social-link" aria-label="Instagram"><img src="./image/ig.png" alt="Instagram"></a>
+            </div>
+            <p style="margin-top: 1rem; color: #cbd5e1;">Email: <a href="mailto:adnanmursyid@gmail.com" style="color: #7dd3fc;">adnanmursyid@gmail.com</a></p>
         </div>
     </footer>
 
