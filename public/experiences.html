@@ -34,6 +34,61 @@
             padding: 1rem 1.25rem;
             transition: all 0.25s ease;
         }
+        .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.25rem;
+    position: relative;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            inset: -0.4rem 1.25rem auto;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(125,211,252,.35),
+                transparent
+            );
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .section-copy {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .info-card {
+            padding: 1rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+        .info-card h3 {
+            margin: 0 0 .4rem;
+            font-size: 1.05rem;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .page-intro{
+            margin-bottom:1rem;
+        }
+
+        .page-intro .eyebrow{
+            margin-bottom:.7rem;
+        }
         .fixed-nav {
             background: rgba(7,17,31,0.8);
             backdrop-filter: blur(16px);
@@ -115,7 +170,7 @@
             </div>
         </div>
 
-        <section class="section" style="max-width: 1120px; padding: 1.25rem 0 0;">
+        <section class="section">
             <div class="highlight-strip">
                 <div class="highlight-card">
                     <h3>Communication</h3>
@@ -147,18 +202,54 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <h2 style="font-size: 1.35rem; margin: 0 0 0.4rem;">Let’s connect</h2>
-            <p style="color: #cbd5e1; margin: 0;">Open to collaboration and new opportunities.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/adnan-mursyid" target="_blank" class="social-link" aria-label="LinkedIn"><img src="./image/linkedin.png" alt="LinkedIn"></a>
-                <a href="https://github.com/Coder2026" target="_blank" class="social-link" aria-label="GitHub"><img src="./image/github.png" alt="GitHub"></a>
-                <a href="https://www.instagram.com/adnanmrsyid" target="_blank" class="social-link" aria-label="Instagram"><img src="./image/ig.png" alt="Instagram"></a>
-            </div>
-            <p style="margin-top: 1rem; color: #cbd5e1;">Email: <a href="mailto:adnanmursyid@gmail.com" style="color: #7dd3fc;">adnanmursyid@gmail.com</a></p>
+     <footer id="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Work Together</h2>
+
+        <p class="section-copy">
+            I'm open to Software Engineering opportunities,
+            collaborations, and professional networking.
+        </p>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/adnan-mursyid"
+               target="_blank"
+               class="social-link"
+               aria-label="LinkedIn">
+                <img src="./image/linkedin.png" alt="LinkedIn">
+            </a>
+
+            <a href="https://github.com/Coder2026"
+               target="_blank"
+               class="social-link"
+               aria-label="GitHub">
+                <img src="./image/github.png" alt="GitHub">
+            </a>
+
+            <a href="https://www.instagram.com/adnanmrsyid"
+               target="_blank"
+               class="social-link"
+               aria-label="Instagram">
+                <img src="./image/ig.png" alt="Instagram">
+            </a>
+
+            <a href="https://wa.me/6282217135529"
+               target="_blank"
+               class="social-link"
+               aria-label="WhatsApp">
+                <img src="./image/whatsapp.png" alt="WhatsApp">
+            </a>
         </div>
-    </footer>
+
+        <p style="margin-top:1rem;color:#cbd5e1;">
+            📧 Email:
+            <a href="mailto:adnanmursyid@gmail.com"
+               style="color:#7dd3fc;">
+                adnanmursyid@gmail.com
+            </a>
+        </p>
+    </div>
+</footer>
 
     <script src="./js/script.js"></script>
 </body>
